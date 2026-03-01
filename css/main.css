@@ -1,4 +1,4 @@
-/* global variables */
+/*global variables */
 :root {
   --primary-color: #2c3e50;
   --text-color: #333333;
@@ -12,18 +12,42 @@ body {
   color: var(--text-color);
   line-height: 1.6;
 }
-/* macro layout stuff */
+/*macro layout stuff */
 .page-wrapper {
   display: grid;
-  /* row 1: for the header
+  /*row 1: for the header
     row 2: for the main content taking remaining space
     row 3: for the footer */
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
+.site-header,
+.content-area {
+  padding: calc(var(--spacing-unit) * 2);
+}
 
+.site-footer {
+  padding: calc(var(--spacing-unit) / 2.5);
+}
 .main-nav {
   display: flex;
   gap: var(--spacing-unit);
   margin-top: var(--spacing-unit);
+}
+
+/*desktop breakpoint (larger screens)*/
+@media (min-width: 768px) {
+  .site-header {
+    /*make sure the header uses the grid for alignment*/
+    display: grid;
+    /*2 columns one for the logo exactly and the other for the rest of the space*/
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    /*right padding so the nav isn't sticking to the edge*/
+    padding-right: 5vw;
+  }
+  .main-nav {
+    margin-top: 0;
+    justify-self: end;
+  }
 }
