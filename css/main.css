@@ -3,7 +3,7 @@
   --primary-color: #2c3e50;
   --text-color: #333333;
   --backgroud-color: #f9f9f9;
-  --spacing-unit: 1rem;
+  --spacing-unit: 2rem;
 }
 
 body {
@@ -23,22 +23,24 @@ body {
 }
 .site-header,
 .content-area {
-  padding: calc(var(--spacing-unit) * 2);
+  padding: calc(var(--spacing-unit) / 2);
 }
 
 .site-footer {
-  padding: calc(var(--spacing-unit) / 2.5);
+  padding: calc(var(--spacing-unit) / 1.5);
+  padding-bottom: 0;
 }
 .main-nav {
   display: flex;
-  gap: var(--spacing-unit);
-  margin-top: var(--spacing-unit);
+  gap: calc(var(--spacing-unit) / 2);
+  margin-top: calc(var(--spacing-unit) / 2);
 }
 
-/*desktop breakpoint (larger screens)*/
+/*desktop breakpoint (larger screens)
+code written using information from: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Media_queries/Using*/
 @media (min-width: 768px) {
   .site-header {
-    /*make sure the header uses the grid for alignment*/
+    /* header using the grid for alignment*/
     display: grid;
     /*2 columns one for the logo exactly and the other for the rest of the space*/
     grid-template-columns: auto 1fr;
@@ -49,6 +51,11 @@ body {
   .main-nav {
     margin-top: 0;
     justify-self: end;
+  }
+
+  .cart-layout {
+    grid-template-columns: 2fr 1fr;
+    align-items: start;
   }
 }
 
@@ -75,8 +82,8 @@ body {
   display: grid;
 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: calc(var(--spacing-unit) * 2);
-  margin-top: calc(var(--spacing-unit) * 2);
+  gap: var(--spacing-unit);
+  margin-top: var(--spacing-unit);
 }
 .product-img {
   width: 100%;
@@ -85,12 +92,40 @@ body {
 }
 
 .product-info {
-  padding: var(--spacing-unit);
+  padding: calc(var(--spacing-unit) / 2);
 }
 
-.price {
+.details-link {
   display: block;
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #666;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/*cart layout*/
+.cart-layout {
+  display: grid;
+  gap: var(--spacing-unit);
+  margin-top: var(--spacing-unit);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--spacing-unit));
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-summary {
+  background: #fff;
+  padding: calc(var(--spacing-unit));
+  border: 1px solid #eee;
+  border-radius: 8px;
 }
