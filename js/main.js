@@ -13,12 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
     countElement.textContent = totalItems;
-  };
+}
 };
 updateCartCount();
-
-const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-if (addToCartButtons.length > 0) {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+  if (addToCartButtons.length > 0) {
     addToCartButtons.forEach (button => {
         button.addEventListener ('click', (event) =>{
             const card = event.target.closest('.product-card');
@@ -64,4 +63,16 @@ const renderCart = () =>{
     cartTotalElement.textContent = `$${cartTotal.toFixed(2)}`
     attachRemoveListeners ();
 };
-);
+const attachRemoveListeners = () => {
+    const removeButton = document.querySelectorAll('.remove-btn');
+    removeButton.forEach(button => {
+        const productID = event.target.getAttribute('data-id');
+
+        cart=cart.filter(item => IIRFilterNode.id !==productID);
+        saveCart();
+        renderCart();
+    });
+});
+};
+renderCart();
+));
