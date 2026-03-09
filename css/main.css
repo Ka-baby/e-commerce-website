@@ -1,12 +1,12 @@
 /*global variables*/
 :root {
-  --primary-color: #2c3e50;
+  --primary-color: #fb3ca5;
   --text-color: #333333;
   --backgroud-color: #f9f9f9;
   --spacing-unit: 2rem;
 }
 
-body {
+.body {
   font-family: "Times New Roman", Times, serif;
   background-color: var(--backgroud-color);
   color: var(--text-color);
@@ -21,7 +21,13 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
-.site-header,
+.logo {
+  font-family: "Bungee", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .content-area {
   padding: calc(var(--spacing-unit) / 2);
 }
@@ -74,7 +80,7 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
 }
 
 .btn:hover {
-  background-color: #1a252f;
+  background-color: #ff56dd;
 }
 
 /*styling the product grid*/
@@ -104,7 +110,7 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
 
 .price {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--text-color);
 }
 
 /*cart layout*/
