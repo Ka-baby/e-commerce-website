@@ -26,6 +26,7 @@
   font-size: 2rem;
   font-weight: 400;
   font-style: normal;
+  color: #ff5d06;
 }
 
 .content-area {
@@ -52,7 +53,8 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
     grid-template-columns: auto 1fr;
     align-items: center;
     /*right padding so the nav isn't sticking to the edge*/
-    padding-right: 5vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
   }
   .main-nav {
     margin-top: 0;
@@ -79,6 +81,23 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
   transition: var(--backgroud-color 0.2s);
 }
 
+.btn-home-shop {
+  display: block;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 65px;
+  padding-top: 2.5rem;
+  padding-left: 3rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: var(--backgroud-color 0.2s);
+  width: 10rem;
+  height: 8rem;
+}
+
 .btn:hover {
   background-color: #ff56dd;
 }
@@ -87,13 +106,13 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
 .product-grid {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
   gap: var(--spacing-unit);
   margin-top: var(--spacing-unit);
 }
 .product-img {
   width: 100%;
-  height: 60%;
+  height: 61%;
   display: block;
 }
 
@@ -106,6 +125,15 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #666;
+}
+
+.empty-link {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  /* source for styling: https://www.w3schools.com/Css/css_text_decoration.asp*/
+  text-decoration-line: underline;
 }
 
 .price {
@@ -134,4 +162,41 @@ code written using information from: https://developer.mozilla.org/en-US/docs/We
   padding: calc(var(--spacing-unit));
   border: 1px solid #eee;
   border-radius: 8px;
+}
+
+.detail-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-unit);
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.description {
+  margin-top: 1.5rem;
+  color: #333333;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .detail-view {
+    margin-top: 7%;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .product-info {
+    padding-left: var(--spacing-unit);
+  }
+}
+
+.add-to-cart-btn {
+  margin-bottom: 0;
+}
+
+.mouse-img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
